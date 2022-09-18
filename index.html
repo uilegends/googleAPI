@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Autocomplete</title>
+    <script src="location.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form id="address-form" action="" method="get" autocomplete="off">
+      <p class="title">Sample address form for North America</p>
+      <p class="note"><em>* = required field</em></p>
+      <label class="full-field">
+        <!-- Avoid the word "address" in id, name, or label text to avoid browser autofill from conflicting with Place Autocomplete. Star or comment bug https://crbug.com/587466 to request Chromium to honor autocomplete="off" attribute. -->
+        <span class="form-label">Deliver to*</span>
+        <input id="ship-address" name="ship-address" required autocomplete="off" />
+      </label>
+
+      <button type="button" class="my-button" onclick="getInputValue()">Save address</button>
+
+      <input type="reset" value="Clear form" />
+    </form>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
+  </body>
+</html>
